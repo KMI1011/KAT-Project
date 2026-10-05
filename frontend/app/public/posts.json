@@ -1,0 +1,48 @@
+[
+  {
+    "id": 1,
+    "username": "kmi1011",
+    "user": "/images/5.jpg",
+    "image": "/images/manchesterutd.jpg",
+    "description": "My first post!",
+    "created": "2023-10-01",
+    "comments": [
+      {
+        "id": "1",
+        "user": {
+          "username": "emwest",
+          "profile": "images/7.jpg"
+        },
+        "comment": "Nice",
+        "created": "2 minutes ago"
+      }
+    ]
+
+  },
+  {
+    "id": 2,
+    "username": "fredflintstone",
+    "user": "/images/3.jpg",
+    "image": "/images/ncmountains.jpg",
+    "description": "Yabba dabba doo!",
+    "created": "2023-10-02"
+  },
+  {
+    "id": 3,
+    "username": "testuser",
+    "user": "/images/2.jpg",
+    "image": "/images/myBatArt.jpg",
+    "description": "Hello world",
+    "created": "2023-10-03"
+  },
+  {
+    "id": 4,
+    "username": "aurorafan",
+    "user": "/images/8.jpg",
+    "likes": 7,
+    "image": "/images/auroraborealis.jpg",
+    "description": "The phenomenal aurora borealis",
+    "created": "3 hrs ago"
+  }
+  
+]
