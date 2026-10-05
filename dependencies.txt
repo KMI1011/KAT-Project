@@ -1,0 +1,81 @@
+KAT Project — what you need to run this from scratch
+====================================================
+
+This is a two-part app. Install both.
+
+  demo/                 Java API (Maven)     http://localhost:8080
+  frontend/app/         React site (npm)     http://localhost:3000
+
+PostgreSQL database name: katproj
+Default DB user/password: postgres / postgres   (see demo/src/main/resources/application.properties)
+
+
+1. System tools (macOS / Homebrew)
+----------------------------------
+  brew install openjdk@17 node postgresql@15
+  brew services start postgresql@15
+  createdb -U postgres katproj     # skip if the database already exists
+
+  Java 11+ and Node 18+ are required.
+
+
+2. One-command project install
+------------------------------
+  From the KAT-Project folder:
+
+    ./install.sh
+
+
+3. Manual install (same thing, split out)
+-----------------------------------------
+  Frontend (this is the real npm dependencies file):
+    cd frontend/app
+    npm install
+
+  Backend (this is the real Java dependencies file):
+    cd demo
+    ./mvnw dependency:resolve
+
+
+4. Frontend npm packages  (frontend/app/package.json)
+-----------------------------------------------------
+  react
+  react-dom
+  react-router-dom
+  react-scripts
+  @fortawesome/fontawesome-svg-core
+  @fortawesome/free-solid-svg-icons
+  @fortawesome/free-brands-svg-icons
+  @fortawesome/react-fontawesome
+  web-vitals
+
+  Dev/test:
+    @testing-library/dom
+    @testing-library/jest-dom
+    @testing-library/react
+    @testing-library/user-event
+
+  Do NOT run npm install from the KAT-Project root.
+  Do NOT use frontend/package.json or frontend/my-app-express
+  (old Express leftover — Spring Boot replaces it).
+
+
+5. Backend Maven packages  (demo/pom.xml)
+-----------------------------------------
+  spring-boot-starter-web
+  spring-boot-starter-data-jpa
+  postgresql
+  spring-security-crypto
+  spring-boot-starter-test
+  mockito-inline
+  log4j 1.2.17
+  jacoco-maven-plugin
+
+
+6. Run after install (two terminals)
+------------------------------------
+  Terminal 1:  cd demo && ./mvnw spring-boot:run
+  Terminal 2:  cd frontend/app && npm start
+
+  Site:  http://localhost:3000
+  API:   http://localhost:8080/api/users/all
